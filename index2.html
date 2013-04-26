@@ -1,0 +1,36 @@
+<!doctype html>
+<html ng-app="app" >
+  <header>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.1/angular.js"></script>
+    <script language="javascript" type="text/javascript">
+      angular.module('app', []);
+      
+      //Whatever you put on the controller scope,
+      //will be availalble in the HTML element bound to the controller.
+      function MyController($scope){
+        $scope.newMessage = "Hi";
+        $scope.messages = ["What's up?", "Yo!"]; 
+        $scope.add = function(){
+          $scope.messages.push($scope.newMessage);
+        };
+      }
+    </script>
+  </header>
+  
+  <body ng-controller="MyController">
+  <h1>
+    Enter name for Quotes:<br>     
+  </h1>
+    <input type="text" ng-model="newMessage">
+    <input type="submit" ng-click="add()" value="Get Quotes">
+    <br>
+    Quotes: <br>
+    <ul>
+      <li ng-repeat="message in messages">
+        {{message}}
+      </li>
+    </ul>
+  </body>
+  
+</html>
