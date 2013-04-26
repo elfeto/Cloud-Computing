@@ -1,9 +1,13 @@
 body
 {
-background-color:#d0e4fe;
+background-color:white;
 }
 h1
 {
 color:orange;
 text-align:center;
+}
+img{
+	width: 1200px;
+	height: 200px;
 }
